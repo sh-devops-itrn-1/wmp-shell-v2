@@ -1,4 +1,3 @@
-MSG=$1
 headings(){
-  echo -e "\e[33m${MSG}\e[0m"
+  echo -e "\e[33m$1\e[0m"
 }
