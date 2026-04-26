@@ -1,0 +1,24 @@
+[Unit]
+Description=WMP Auth Service
+After=network.target
+
+[Service]
+Type=simple
+User=appuser
+WorkingDirectory=/app
+ExecStart=/app/auth-service
+Restart=on-failure
+RestartSec=10
+
+Environment=DB_HOST=172.31.78.109
+Environment=DB_PORT=5432
+Environment=DB_USER=auth_svc_user
+Environment=DB_PASSWORD=localdev123
+Environment=DB_NAME=wmp
+Environment=DB_SCHEMA=auth_schema
+Environment=SERVER_PORT=8081
+Environment=JWT_SECRET=myDefaultSuperSecretKeyThatIsAtLeast256BitsLongForHS256Algorithm
+Environment=PORTFOLIO_SERVICE_URL=http://localhost:8080
+
+[Install]
+WantedBy=multi-user.target
