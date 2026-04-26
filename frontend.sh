@@ -13,7 +13,7 @@ dnf install -y nginx &>>OUTPUT.log
 status_check $?
 
 
-
+set -x
 headings "Install Nodejs 22 repo"
 curl -fsSL https://rpm.nodesource.com/setup_22.x | bash - &>>OUTPUT.log
 status_check $?
@@ -39,7 +39,7 @@ mkdir -p /tmp/frontend &>>OUTPUT.log
 status_check $?
 
 headings "copy nginx configuration"
-cp -r ngnix.conf /etc/nginx/nginx.conf &>>OUTPUT.log
+cp ngnix.conf /etc/nginx/nginx.conf
 status_check $?
 
 
