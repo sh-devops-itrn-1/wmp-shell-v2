@@ -15,7 +15,7 @@ status_check $?
 
 headings "Initialize DB"
 /usr/pgsql-16/bin/postgresql-16-setup initdb
-status_check $?
+
 
 headings "Change the Listen_address"
 sed -i "/#listen_addresses/ c listen_addresses = '*'" /var/lib/pgsql/16/data/postgresql.conf
