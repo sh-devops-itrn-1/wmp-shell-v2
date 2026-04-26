@@ -14,7 +14,7 @@ status_check $?
 
 
 headings "copy nginx configuration"
-cp ngnix.conf /etc/nginx/nginx.conf &>>OUTPUT.log
+cp -r ngnix.conf /etc/nginx/nginx.conf &>>OUTPUT.log
 status_check $?
 
 headings "Install Nodejs 22 repo"
