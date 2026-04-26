@@ -1,3 +1,5 @@
+source common.sh
+
 headings "Disable Nginx"
 dnf module disable nginx -y &>>OUTPUT.log
 
